@@ -42,7 +42,7 @@ namespace Hamming_coding
                         break;
                 }
             }
-            while (key.KeyChar != 13);
+            while (key.Key != ConsoleKey.Enter);
 
             StringBuilder sb = new StringBuilder();
 
@@ -165,7 +165,7 @@ namespace Hamming_coding
                 s6 = str;
                 s6 = s6.Replace('1', '0');
 
-                for (int i = 23; i < str.Length; i += 64)
+                for (int i = 31; i < str.Length; i += 64)
                 {
                     s6 = s6.Insert(i, "11111111111111111111111111111111");
                 }
@@ -336,7 +336,7 @@ namespace Hamming_coding
                         break;
                 }
             }
-            while (key.KeyChar != 13);
+            while (key.Key != ConsoleKey.Enter);
 
             was = str;
             int[] sBossDecode = str.Select(ch => int.Parse(ch.ToString())).ToArray();
@@ -522,6 +522,8 @@ namespace Hamming_coding
             string message = Encoding.ASCII.GetString(bytes);
 
             Console.WriteLine(message);
+
+            Console.ReadKey();
         }
     }
 }
